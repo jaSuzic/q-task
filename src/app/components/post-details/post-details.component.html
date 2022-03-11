@@ -1,0 +1,9 @@
+<div>
+    <a [routerLink]="'/posts'">&#60;&#60;&#60; Go back to all posts</a>
+    <app-post-item [isInList]="false" [item]="selectedPost"></app-post-item>
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div *ngIf="!isLoading" class="comments-title">Comments: </div>
+    <div *ngFor="let item of comments">
+        <app-comment-item [comment]="item"></app-comment-item>
+    </div>
+</div>

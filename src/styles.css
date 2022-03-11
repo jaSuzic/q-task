@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --hover-color: rgba(144, 238, 144, 0.3);
+    --selected-color: rgb(144, 238, 144);
+}
+
+body {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 18px;
+}
+

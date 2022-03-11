@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div class="top-wrapper">
+        <div class="inner-wrapper">
+            <div>
+                <form #filterForm="ngForm" (ngSubmit)="onFilterSubmit()">
+                    <input [(ngModel)]="filterValue" name="filterValue" placeholder="Author name" class="filter-input">
+                    <button type="submit" class="filter-buttons">Filter</button>
+                    <button type="reset" (click)="resetFilter()" class="filter-buttons">X</button>
+                </form>
+            </div>
+            <app-pagination-bar [numberOfPages]=numberOfPages (pageChanged)="onPageChange($event)"></app-pagination-bar>
+        </div>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+    <div *ngFor="let item of posts">
+        <app-post-item [item]="item" [routerLink]="'/post/'+item.id" (click)="onItemSelect(item)" [isInList]="true">
+        </app-post-item>
+    </div>
+</div>

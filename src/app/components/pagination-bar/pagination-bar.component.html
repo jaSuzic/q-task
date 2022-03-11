@@ -1,0 +1,11 @@
+<div class="pag-wrapper">
+    <button (click)="onClickPrev()" class="pag-arrows" [disabled]="activePage===1"
+            [ngClass]="{'clickable': activePage!==1}">
+        &#60;</button>
+    <div *ngFor="let number of pageNumbers">
+        <div (click)="onChangePage(number)" class="pag-numbers"
+             [ngClass]="{'active-page':number===activePage, 'clickable':number!==activePage}">{{number}}</div>
+    </div>
+    <button (click)="onClickNext()" class="pag-arrows" [disabled]="activePage===pageNumbers.length"
+            [ngClass]="{'clickable': activePage!==pageNumbers.length}">&#62;</button>
+</div>

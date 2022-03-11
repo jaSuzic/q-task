@@ -1,0 +1,12 @@
+.comments-title {
+    padding: 2rem 0 0rem 2rem;
+    font-weight: bold;
+}
+
+a:link, a:visited, a:active {
+    color: black;
+}
+
+a:hover {
+    background-color: var(--hover-color);
+}

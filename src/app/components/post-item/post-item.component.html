@@ -1,0 +1,13 @@
+<div *ngIf="item" class="post-wrapper" [ngClass]="{'clickable-item' : isInList}">
+    <div class="post-title">{{item.title | titlecase}}</div>
+    <div *ngIf="isInList;else notInListDetails" class="post-details">{{item.user.name}}
+        <span class="post-comments"><span class="material-icons comments-icon">message</span>
+            {{item.commentsNumber}}</span></div>
+    <div class="post-body">{{item.body}}</div>
+</div>
+
+<ng-template #notInListDetails>
+    <div class="post-details">
+        {{item.user.name}}
+    </div>
+</ng-template>
